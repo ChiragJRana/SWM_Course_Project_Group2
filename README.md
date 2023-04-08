@@ -15,6 +15,6 @@ Members:
 
 
 ## Models
-1. K-means and KNN model (baseline)
+1. K-means model (baseline)
 2. Deep Neural Network
 3. Matrix Factorization
