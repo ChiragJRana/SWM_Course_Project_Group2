@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommender System</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+            max-width: 500px;
+            padding: 20px;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        label {
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Recommender System</h1>
+    <form method="POST" action="/">
+        <label for="option">Choose an Algorithm:</label>
+        <br><br>
+        <input type="radio" id="option" name="option" value="A" required>
+        <label for="A">K-Means</label>
+        <br><br>
+        <input type="radio" id="option" name="option" value="B" required>
+        <label for="B">Matrix Factorization</label>
+        <br><br>
+        <input type="radio" id="option" name="option" value="C" required>
+        <label for="C">Deep Neural Network</label>
+        <br><br>
+        <label for="number">Enter User Id:</label>
+        <input type="number" id="number" name="number" required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if table_data %}
+        <h2>Algorithm: {{ selected_option_text }} | User Id: {{ number }}</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Movie Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in table_data %}
+                    <tr>
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</body>
+</html>
