@@ -88,8 +88,9 @@
         <table>
             <thead>
                 <tr>
-                    <th>S.No.</th>
-                    <th>Movie Title</th>
+                    <th>Movie Id</th>
+                    <th>Title</th>
+                    <th>Rating</th>
                 </tr>
             </thead>
             <tbody>
@@ -97,6 +98,7 @@
                     <tr>
                         <td>{{ row[0] }}</td>
                         <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
