@@ -6,4 +6,4 @@
 | KNN           | -- | -- |-- |-- |-- |
 | K-Means       |  --|   -- |-- |-- |-- |
 | DNN           | --      |-- |-- |-- |-- |
-| Matrix Factorization| --  |-- |-- |-- |-- |
+| Matrix Factorization| 0.992  | 0.799 | 0.276 | 0.394 | 0.294 |
