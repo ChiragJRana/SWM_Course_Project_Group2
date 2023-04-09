@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import kmeans
+import kmeans_model
 
 app = Flask(__name__)
 
@@ -10,7 +10,7 @@ def index():
         selected_option = request.form.get('option')
         entered_number = request.form.get('number')
         tdf = generate_table_data(selected_option, entered_number)
-        table_data = [(row['movieId'], row['title'].split('(')[0]) for index, row in tdf.iterrows()]
+        table_data = [(row['movie_id'], row['movie_title'], row['movie_rating']) for index, row in tdf.iterrows()]
         option_text = {'A': 'K-Means', 'B': 'Matrix Factorization', 'C': 'Deep Neural Network'}
         selected_option_text = option_text.get(selected_option, 'Unknown Option')
 
@@ -30,7 +30,7 @@ def generate_table_data(selected_option, entered_number):
 
 
 def get_kmeans_prediction(pid):
-    data_k = kmeans.recommend_movies(int(pid))
+    data_k = kmeans_model.get_movie_recommendations(int(pid))
     return data_k
 
 if __name__ == "__main__":
