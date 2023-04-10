@@ -41,10 +41,9 @@ def get_recommendations(user_id):
 
 def get_movie_recommendations(user_id):
   recommended_movies = get_recommendations(user_id)
-  print(len(recommended_movies))
-  movies = ratings_df[ratings_df['movie_id'].isin(recommended_movies)]
+  recommended_movies = [eval(i) for i in recommended_movies]
+  movies = ratings_df.loc[ratings_df['movie_id'].isin(recommended_movies)]
   movies.drop_duplicates(subset='movie_id', keep="first", inplace=True)
-  print(movies.head())
   return movies
 
 kmeans = load_clusters()
