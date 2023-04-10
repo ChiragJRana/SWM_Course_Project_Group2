@@ -17,6 +17,6 @@ Members:
 Note: These Datasets are to be downloaded to /dataset/ folder before running the scripts.
 
 ## Models
-1. K-means model (baseline)
+1. KNN model (baseline)
 2. Deep Neural Network
 3. Matrix Factorization
