@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import kmeans_model
+import matrix_factorization
 
 app = Flask(__name__)
 
@@ -23,11 +24,15 @@ def generate_table_data(selected_option, entered_number):
     if selected_option == 'A':
         data = get_kmeans_prediction(entered_number)
     elif selected_option == 'B':
-        data = [(f'Option {selected_option} - Row {i}', entered_number**i) for i in range(1, 6)]
+        data = get_svd_prediction(entered_number)
     else:
         data = [(f'Option {selected_option} - Row {i}', entered_number+i) for i in range(1, 6)]
     return data
 
+
+def get_svd_prediction(pid):
+    data_k = matrix_factorization.get_movie_recommendations(int(pid))
+    return data_k
 
 def get_kmeans_prediction(pid):
     data_k = kmeans_model.get_movie_recommendations(int(pid))
