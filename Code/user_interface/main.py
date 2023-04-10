@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import kmeans_model
 import matrix_factorization
+import dnn
 
 app = Flask(__name__)
 
@@ -36,6 +37,10 @@ def get_svd_prediction(pid):
 
 def get_kmeans_prediction(pid):
     data_k = kmeans_model.get_movie_recommendations(int(pid))
+    return data_k
+
+def get_dnn_prediction(pid):
+    data_k = dnn.get_movie_recommendations(int(pid))
     return data_k
 
 if __name__ == "__main__":
