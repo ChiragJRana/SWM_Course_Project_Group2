@@ -10,9 +10,10 @@ Members:
 
 
 ---
-## Datasets  
+## Datasets 
 1.  Link to preprocessed movie dataset: [Link](https://drive.google.com/file/d/1JZoEUxGqBIg_LcuyHodLw5cq6kEq6el1/view?usp=sharing)
-
+2.  Link to meta data used for data Visualization: [Link](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata)
+[Note]: These Datasets are to be downloaded to /dataset/ folder before running the scripts.
 
 ## Models
 1. K-means model (baseline)
